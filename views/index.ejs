@@ -1,0 +1,26 @@
+<!-- <%- include("partials/header.ejs") %> -->
+
+<h1>Welcome to my blog application!</h1>
+
+<a href="/create"><button>Create</button></a>
+
+<a href="/view"><button>View</button></a>
+
+<a href="/delete"><button>Delete</button></a>
+
+
+<h2>The list of Blogs</h2>
+
+<% if(locals.topics){ %>
+<% for(let i=0;i<topics.length;i++){ %>
+    <ol>
+        <li>
+            <a href="<%= topics[i] %>"><%= topics[i] %></a>
+        </li>
+    </ol>
+<% } %>
+<% }%>
+
+
+
+<!-- <%- include("partials/footer.ejs") %> -->
