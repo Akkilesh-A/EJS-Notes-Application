@@ -2,11 +2,15 @@
 
 <h1>Create a New Blog!</h1>
 <form action="/upload" method="POST">
-  <input name="title" type="text" class="blog-input" placeholder="Topic..." />
+  <label for="title">Title</label>
+  <input name="title" type="text" class="blog-input" placeholder="Topic..." /><br>
+  <label for="title">Content</label>
   <textarea name="content" class="blog-input" placeholder="Content..."></textarea>
   <input type="submit" value="Upload!" />
 </form>
 
 <a href="/"><button>Home!</button></a>
-
+<br>
+<br>
+<br>
 <%- include("partials/footer.ejs") %>

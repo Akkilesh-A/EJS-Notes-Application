@@ -76,6 +76,27 @@ app.post("/deleting",(req,res)=>{
   res.render("deleted.ejs");
 });
 
+//getting input to update a existing blog
+app.get("/update",(req,res)=>{
+  res.render("update.ejs");
+});
+
+//deleting a blog
+app.post("/updated",(req,res)=>{ 
+  let temp;
+  let content_to_be_added=req.body.content;  
+  for(let i=0;i<topic_arr.length;i++){
+    if(topic_arr[i]==req.body.title){
+      blog_content[i]+=" "+content_to_be_added;
+      temp=i;
+    }
+  }
+  res.render("blog.ejs",{
+    title:req.body.title,
+    content:blog_content[temp]
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
