@@ -86,13 +86,30 @@ app.get("/update",(req,res)=>{
   res.render("update.ejs");
 });
 
+//to show previous content
+app.post("/toupdate",(req,res)=>{
+  let content;
+  let temp;
+  for(let i=0;i<topic_arr.length;i++){
+    if(topic_arr[i]==req.body.title){
+      content=blog_content[i];
+      temp=i;
+    }
+  }
+  res.render("toupdate.ejs",{
+    title:req.body.title,
+    previous_content:content,  
+    topic_num:temp+1,  
+  })
+})
+
 //updating a blog
 app.post("/updated",(req,res)=>{ 
   let temp;
   let content_to_be_added=req.body.content;  
   for(let i=0;i<topic_arr.length;i++){
     if(topic_arr[i]==req.body.title){
-      blog_content[i]+=" "+content_to_be_added;
+      blog_content[i]=content_to_be_added;
       temp=i;
     }
   }

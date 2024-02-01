@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs") %>
+
+<h1>Update a Blog!</h1>
+<h2>Title: <%= title %></h2>
+<h3>Blog Number:<%= topic_num %></h3>
+<form action="/updated" method="POST">
+    <input type="hidden" name="title" value="<%= title %>">
+    <label for="content">Content</label>
+    <textarea name="content" class="blog-input" placeholder="Content..." ><%= previous_content %></textarea>
+    <input type="submit" value="Upload!" />
+</form>
+
+<a href="/"><button>Home!</button></a>
+
+<%- include("partials/footer.ejs") %>
