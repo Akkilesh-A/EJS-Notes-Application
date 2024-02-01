@@ -71,6 +71,7 @@ app.post("/deleting",(req,res)=>{
       topic_num_to_delete=i;
     }
   }
+  topic_number-=1;
   //replacing that partciular blog and then consecutive blogs until end of both arrays and then poping last elements
   for(let j=topic_num_to_delete;j<topic_arr.length;j++){
     topic_arr[j]=topic_arr[j+1];
