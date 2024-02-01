@@ -8,12 +8,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const topic_arr=[];
 const blog_content=[];
+let topic_number=0;
 
 //initial page
 app.get("/", (req, res) => {
   res.render("index.ejs",
   {
-    topics:topic_arr
+    topics:topic_arr,
+    topic_num:topic_number
   });
 });
 
@@ -26,9 +28,11 @@ app.get("/create", (req, res) => {
 app.post("/upload",(req,res)=>{
   topic_arr.push(req.body.title);
   blog_content.push(req.body.content);
+  topic_number+=1;
   res.render("blog.ejs",{
     title:req.body.title,
     content:req.body.content,
+    topic_num:topic_number
   });
 });
 
@@ -40,6 +44,7 @@ app.get("/view",(req,res)=>{
 //viewing a blog based on the given topic
 let topic_num_to_display;
 app.post("/blogtoview",(req,res)=>{
+  console.log(req.body.topic_name);
   for(let i=0;i<topic_arr.length;i++){
     if(topic_arr[i]==req.body.topic_name){
       topic_num_to_display=i;
@@ -48,7 +53,7 @@ app.post("/blogtoview",(req,res)=>{
   res.render("blog.ejs",{
     title:topic_arr[topic_num_to_display],
     content:blog_content[topic_num_to_display],
-    topic_number:topic_num_to_display
+    topic_num:topic_num_to_display+1,
   });
 });
 
@@ -81,7 +86,7 @@ app.get("/update",(req,res)=>{
   res.render("update.ejs");
 });
 
-//deleting a blog
+//updating a blog
 app.post("/updated",(req,res)=>{ 
   let temp;
   let content_to_be_added=req.body.content;  
@@ -93,7 +98,8 @@ app.post("/updated",(req,res)=>{
   }
   res.render("blog.ejs",{
     title:req.body.title,
-    content:blog_content[temp]
+    content:blog_content[temp],
+    topic_num:temp+1,
   });
 });
 

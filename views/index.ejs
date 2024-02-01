@@ -8,19 +8,20 @@
 
 <a href="/delete"><button>Delete</button></a>
 
+<a href="/update"><button>Update</button></a>
 
 <h2>The list of Blogs</h2>
 
 <% if(locals.topics){ %>
 <% for(let i=0;i<topics.length;i++){ %>
-    <ol>
+    <ul>
         <li>
-            <a href="<%= topics[i] %>"><%= topics[i] %></a>
+            <%= topics[i] %>
         </li>
-    </ol>
+    </ul>
 <% } %>
 <% }%>
 
+<h1>Blog Number: <%= topic_num %> </h1>
 
-
-<!-- <%- include("partials/footer.ejs") %> -->
+<%- include("partials/footer.ejs") %>
