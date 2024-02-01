@@ -7,4 +7,4 @@
 ### Node.js
 ### Express.js
 
-### Install appropriate node modules using "npm i" or "npm i express ejs body-parser" before using
+### Install appropriate node modules using "npm i" before using
