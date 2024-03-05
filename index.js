@@ -124,33 +124,31 @@ app.post("/updated",(req,res)=>{
 });
 
 
-//adding current weather 
-// const axios = require('axios');
-// const qs = require('qs');
-let data = qs.stringify({
-  'username': 'akkilesh',
-  'password': 'akkilesh' 
-});
+// //adding current weather 
+// let data = qs.stringify({
+//   'username': 'akkilesh',
+//   'password': 'akkilesh' 
+// });
 
-let config = {
-  method: 'get',
-  maxBodyLength: Infinity,
-  url: 'https://api.weatherapi.com/v1/current.json?q=chennai&key=30ef02dc7c654bfa957133236242202',
-  headers: { 
-    'Content-Type': 'application/x-www-form-urlencoded'
-  },
-  data : data
-};
+// let config = {
+//   method: 'get',
+//   maxBodyLength: Infinity,
+//   url: 'https://api.weatherapi.com/v1/current.json?q=chennai&key=30ef02dc7c654bfa957133236242202',
+//   headers: { 
+//     'Content-Type': 'application/x-www-form-urlencoded'
+//   },
+//   data : data
+// };
 
-axios.request(config)
-.then((response) => {
-  // const data1=JSON.stringify(response.data);
-  // console.log(JSON.stringify(response.data).current["temp_c"]);
-  console.log(response.data.current.temp_c);
-})
-.catch((error) => {
-  console.log(error);
-});
+// axios.request(config)
+// .then((response) => {
+//   // const data1=JSON.stringify(response.data);
+//   // console.log(JSON.stringify(response.data).current["temp_c"]);
+//   console.log(response.data.current.temp_c);
+// })
+// .catch((error) => {
+//   console.log(error);
+// });
 
 
 app.listen(port, () => {
