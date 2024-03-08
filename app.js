@@ -50,7 +50,7 @@ app.post("/Notetoview",(req,res)=>{
       topic_num_to_display=i;
     }
     if(i==topic_arr.length-1 && topic_arr[i]!=req.body.topic_name){
-      alert("No such topic found");
+      redirect("/view");
     }
   }
   res.render("Note.ejs",{

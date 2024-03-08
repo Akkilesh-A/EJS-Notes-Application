@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="/styles/content.css">
 </head>
 <body>
-    <h1>That Note was deleted!</h1>
+    <%- include("partials/header.ejs") %>
+    <div style="text-align: center; display: flex; justify-content: center; flex-direction: column; height:85vh; justify-content: center; align-items: center;">
+        <h1>That Note was deleted!😒</h1>
+        <button onclick="location.href='/';" class="button1">Home</button>
+    </div>
 </body>
-
-<button onclick="location.href='/';" class="button2">Home</button>
 </html>

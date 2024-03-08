@@ -8,18 +8,22 @@
 </head>
 <body>
     <%- include("partials/header.ejs") %>
-
-    <h1>Update a Note!</h1>
-    <form action="/toupdate" method="POST">
-        <label for="title">Title</label>
-        <input name="title" type="text" class="Note-input" placeholder="Topic..." /><br>
-        <!-- <label for="title">Content</label>
-        <textarea name="content" class="Note-input" placeholder="Content..." ></textarea> -->
-        <input type="submit" value="Upload!" />
-    </form>
-
-    <button onclick="location.href='/';" class="button2">Home</button>
-
+    <div class="landing-page1">
+        <div class="heading1"><h1>Search to <br> <span>Update</span> a Note!</h1></div>  
+      <div class="create-blog">
+        <form action="/toupdate" method="POST">
+          <table>
+            <tr>
+              <td class="input-label" ><label class="input-label" for="topic_name">Title</label></td>
+              <td><input name="title" type="text" class="input-area" placeholder="Note Name" /><br></td>
+            </tr>
+            <tr>
+              <td class="button-row" colspan="2" style="text-align: center;"><input class="button1" type="submit" value="Search🔎" /></td>
+            </tr>
+          </table>
+        </form>    
+      </div>
+    </div>
     <%- include("partials/footer.ejs") %>
 </body>
 </html>

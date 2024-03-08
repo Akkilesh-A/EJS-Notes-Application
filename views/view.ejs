@@ -3,18 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Note!</title>
+    <title>Search🔎 Note!</title>
     <link rel="stylesheet" href="/styles/content.css">
 </head>
 <body>
     <%- include("partials/header.ejs") %>
-
-    <h1>Find a Note!</h1>
-    <form action="/Notetoview" method="POST">
-        <label for="topic_name">Topic Name:</label>
-        <input name="topic_name" type="text"class="Note-input" placeholder="Note Name"/>
-        <input type="submit">
-    </form>
+    <div class="landing-page1">
+        <div class="heading1"><h1>Search for a <br> <span>Note</span>!</h1></div>  
+      <div class="create-blog">
+        <form action="/Notetoview" method="POST">
+          <table>
+            <tr>
+              <td class="input-label" ><label class="input-label" for="topic_name">Title</label></td>
+              <td><input name="topic_name" type="text" class="input-area" placeholder="Note Name" /><br></td>
+            </tr>
+            <tr>
+              <td class="button-row" colspan="2" style="text-align: center;"><input class="button1" type="submit" value="Search🔎" /></td>
+            </tr>
+          </table>
+        </form>    
+      </div>
+    </div>
 
     <button onclick="location.href='/';" class="button2">Home</button>
 

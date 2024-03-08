@@ -1,0 +1,15 @@
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    flex-direction: column;
+    height: 95vh;
+}
+
+.note-number{
+    margin-left: 15%;
+    margin-right: 15%;
+}
