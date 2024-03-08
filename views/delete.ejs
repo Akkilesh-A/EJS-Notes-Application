@@ -1,12 +1,23 @@
-<%- include("partials/header.ejs") %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete A Blog</title>
+    <link rel="stylesheet" href="/styles/content.css">
+</head>
+<body>
+    <%- include("partials/header.ejs") %>
 
-<h1>Delete a Blog!</h1>
-<form action="/deleting" method="POST">
-    <label for="topic_name">Topic Name:</label>
-    <input name="topic_name" type="text"class="blog-input" placeholder="Blog Name"/>
-    <input type="submit">
-</form>
+    <h1>Delete a Blog!</h1>
+    <form action="/deleting" method="POST">
+        <label for="topic_name">Topic Name:</label>
+        <input name="topic_name" type="text"class="blog-input" placeholder="Blog Name"/>
+        <input type="submit">
+    </form>
 
-<a href="/"><button>Home!</button></a>
+    <button onclick="location.href='/';" class="button2">Home</button>
 
-<%- include("partials/footer.ejs") %>
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>

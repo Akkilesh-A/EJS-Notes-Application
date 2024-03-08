@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <%= title %>  </title>
+    <link rel="stylesheet" href="/styles/content.css">
 </head>
 <body>
     <h1>Blog Ttile: <%= title %>!</h1>
     <h3>Content:</h3>
     <p><%= content %></p>
+    <h1>Blog Number: <%= topic_num %> </h1>
+    <button onclick="location.href='/';" class="button2">Home</button>
 </body>
 
-<h1>Blog Number: <%= topic_num %> </h1>
 
-<a href="/"><button>Home!</button></a>
+
 </html>

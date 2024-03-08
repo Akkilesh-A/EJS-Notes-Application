@@ -1,10 +1,8 @@
 import express from "express";
 import bodyParser from "body-parser";
-import axios from "axios";
-import qs from "qs";
 
 const app = express();
-const port = 3000;
+const port = 5000;
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -50,6 +48,9 @@ app.post("/blogtoview",(req,res)=>{
   for(let i=0;i<topic_arr.length;i++){
     if(topic_arr[i]==req.body.topic_name){
       topic_num_to_display=i;
+    }
+    if(i==topic_arr.length-1 && topic_arr[i]!=req.body.topic_name){
+      res.render("notfound.ejs");
     }
   }
   res.render("blog.ejs",{
@@ -123,34 +124,12 @@ app.post("/updated",(req,res)=>{
   });
 });
 
-
-// //adding current weather 
-// let data = qs.stringify({
-//   'username': 'akkilesh',
-//   'password': 'akkilesh' 
+//listening to port
+// app.listen(port, () => {
+//   console.log(`Server running on port ${port}`);
 // });
 
-// let config = {
-//   method: 'get',
-//   maxBodyLength: Infinity,
-//   url: 'https://api.weatherapi.com/v1/current.json?q=chennai&key=30ef02dc7c654bfa957133236242202',
-//   headers: { 
-//     'Content-Type': 'application/x-www-form-urlencoded'
-//   },
-//   data : data
-// };
-
-// axios.request(config)
-// .then((response) => {
-//   // const data1=JSON.stringify(response.data);
-//   // console.log(JSON.stringify(response.data).current["temp_c"]);
-//   console.log(response.data.current.temp_c);
-// })
-// .catch((error) => {
-//   console.log(error);
-// });
-
-
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`Server running on port ${port}`);
 });
+

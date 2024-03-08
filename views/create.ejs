@@ -1,16 +1,25 @@
-<%- include("partials/header.ejs") %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create A Blog!</title>
+  <link rel="stylesheet" href="/styles/content.css">
+</head>
+<body>
+  <%- include("partials/header.ejs") %>
+  <h1>Create a New Blog!</h1>
+  <form action="/upload" method="POST">
+    <label for="title">Title</label>
+    <input name="title" type="text" class="blog-input" placeholder="Topic..." /><br>
+    <label for="title">Content</label>
+    <textarea name="content" class="blog-input" placeholder="Content..."></textarea>
+    <input type="submit" value="Upload!" />
+  </form>
 
-<h1>Create a New Blog!</h1>
-<form action="/upload" method="POST">
-  <label for="title">Title</label>
-  <input name="title" type="text" class="blog-input" placeholder="Topic..." /><br>
-  <label for="title">Content</label>
-  <textarea name="content" class="blog-input" placeholder="Content..."></textarea>
-  <input type="submit" value="Upload!" />
-</form>
+  <button onclick="location.href='/';" class="button2">Home</button>
 
-<a href="/"><button>Home!</button></a>
-<br>
-<br>
-<br>
-<%- include("partials/footer.ejs") %>
+  <%- include("partials/footer.ejs") %>
+</body>
+</html>
+

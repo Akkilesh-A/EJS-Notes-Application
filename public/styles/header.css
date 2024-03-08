@@ -1,0 +1,23 @@
+header{
+    display: flex;
+    background-color: rgb(202, 239, 227);
+    padding-left:1%;
+}
+
+.headerlinks{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    text-decoration: none;
+    list-style-type:none;
+    align-items: center;
+}
+
+.header-link{
+    margin: 10px;
+    text-decoration: none;
+    color: rgb(179, 211, 226);
+    font-size: 15px;
+    font-weight: 700;
+}
+
