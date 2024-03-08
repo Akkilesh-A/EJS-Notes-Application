@@ -8,3 +8,5 @@
 ### Express.js
 
 ### Install appropriate node modules using "npm i" before using
+
+### Run command <code> nodemon app.js </code>
