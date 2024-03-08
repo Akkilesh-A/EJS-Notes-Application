@@ -1,4 +1,4 @@
-# A complete CRUD Blog application
+# A complete CRUD Note application
 
 ## Tech Stack used:
 ### HTML

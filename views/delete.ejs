@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete A Blog</title>
+    <title>Delete A Note</title>
     <link rel="stylesheet" href="/styles/content.css">
 </head>
 <body>
     <%- include("partials/header.ejs") %>
 
-    <h1>Delete a Blog!</h1>
+    <h1>Delete a Note!</h1>
     <form action="/deleting" method="POST">
         <label for="topic_name">Topic Name:</label>
-        <input name="topic_name" type="text"class="blog-input" placeholder="Blog Name"/>
+        <input name="topic_name" type="text"class="Note-input" placeholder="Note Name"/>
         <input type="submit">
     </form>
 

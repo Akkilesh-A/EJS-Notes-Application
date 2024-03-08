@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update A Blog!</title>
+    <title>Update A Note!</title>
     <link rel="stylesheet" href="/styles/content.css">
 </head>
 <body>
     <%- include("partials/header.ejs") %>
 
-    <h1>Update a Blog!</h1>
+    <h1>Update a Note!</h1>
     <form action="/toupdate" method="POST">
         <label for="title">Title</label>
-        <input name="title" type="text" class="blog-input" placeholder="Topic..." /><br>
+        <input name="title" type="text" class="Note-input" placeholder="Topic..." /><br>
         <!-- <label for="title">Content</label>
-        <textarea name="content" class="blog-input" placeholder="Content..." ></textarea> -->
+        <textarea name="content" class="Note-input" placeholder="Content..." ></textarea> -->
         <input type="submit" value="Upload!" />
     </form>
 

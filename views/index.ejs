@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bloggistar</title>
+    <title>Notegistar</title>
     <link rel="stylesheet" href="/styles/content.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
         <div class="landing-page">
             <div class="heading">
                 <h1>Welcome to my</h1>
-                <h1><span>Blog</span> Application!</h1>
+                <h1><span>Note</span> Application!</h1>
             </div>
             <div class="buttons-group">
                 <button onclick="location.href='/create';" class="button2">Create</button>
@@ -23,9 +23,9 @@
             </div>
         </div>
 
-        <h1>Total Number Of Blogs: <%= topic_num %> </h1>
+        <h1>Total Number Of Notes: <%= topic_num %> </h1>
 
-        <h2>The list of Blogs</h2>
+        <h2>The list of Notes</h2>
 
         <% if(locals.topics){ %>
         <% for(let i=0;i<topics.length;i++){ %>
