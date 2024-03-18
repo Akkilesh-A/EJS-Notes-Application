@@ -7,6 +7,6 @@
 ### Node.js
 ### Express.js
 
-### Install appropriate node modules using "npm i" before using
+### Install appropriate node modules using <code>npm i</code> before using
 
-### Run command <code> nodemon app.js </code>
+### Run command <code>nodemon app.js</code>
