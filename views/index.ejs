@@ -23,7 +23,11 @@
             </div>
         </div>
 
+        <% if(topic_num>=0){ %>
         <h1>Total Number Of Notes: <%= topic_num %> </h1>
+        <% }else{ %>
+        <h1>Total Number Of Notes: 0 </h1>
+        <% } %>
 
         <h2 class="notes-list">The list of Notes</h2>
 
