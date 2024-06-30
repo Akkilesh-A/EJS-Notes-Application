@@ -108,12 +108,15 @@ app.get("/update",(req,res)=>{
 //to show previous content
 app.post("/toupdate",(req,res)=>{
   let content;
-  let temp;
+  let temp=0;
   for(let i=0;i<topic_arr.length;i++){
     if(topic_arr[i]==req.body.title){
       content=Note_content[i];
       temp=i;
     }
+  }
+  if(temp==0){
+    return res.render("notenotfound.ejs");
   }
   res.render("toupdate.ejs",{
     title:req.body.title,
