@@ -42,23 +42,29 @@ app.get("/view",(req,res)=>{
 });
 
 //viewing a Note based on the given topic
-let topic_num_to_display=0;
-app.post("/Notetoview",(req,res)=>{
+
+app.post("/Notetoview", (req, res) => {
+  let topic_num_to_display = -1;
   console.log(req.body.topic_name);
-  for(let i=0;i<topic_arr.length;i++){
-    if(topic_arr[i]==req.body.topic_name){
-      topic_num_to_display=i;
-    }
-    if(i==topic_arr.length-1 && topic_arr[i]!=req.body.topic_name){
-      res.redirect("/notenotfound");
+
+  for (let i = 0; i < topic_arr.length; i++) {
+    if (topic_arr[i] === req.body.topic_name) {
+      topic_num_to_display = i;
+      break; // Exit the loop as soon as the topic is found
     }
   }
-  res.render("Note.ejs",{
-    title:topic_arr[topic_num_to_display],
-    content:Note_content[topic_num_to_display],
-    topic_num:topic_num_to_display+1,
-  });
+
+  if (topic_num_to_display === -1) {
+    res.redirect("/notenotfound");
+  } else {
+    res.render("Note.ejs", {
+      title: topic_arr[topic_num_to_display],
+      content: Note_content[topic_num_to_display],
+      topic_num: topic_num_to_display + 1,
+    });
+  }
 });
+
 
 //note not found
 app.get('/notenotfound',(req,res)=>{
@@ -74,20 +80,24 @@ app.get("/delete",(req,res)=>{
 app.post("/deleting",(req,res)=>{ 
   let topic_num_to_delete;
   //getting Note index 
-  for(let i=0;i<topic_arr.length;i++){
-    if(topic_arr[i]==req.body.topic_name){
-      topic_num_to_delete=i;
+  if(req.body.topic_name){
+    for(let i=0;i<topic_arr.length;i++){
+      if(topic_arr[i]==req.body.topic_name){
+        topic_num_to_delete=i;
+        break;
+      }
     }
+    topic_number-=1;
+    //replacing that partciular Note and then consecutive Notes until end of both arrays and then poping last elements
+    for(let j=topic_num_to_delete;j<topic_arr.length;j++){
+      topic_arr[j]=topic_arr[j+1];
+      Note_content[j]=Note_content[j+1];
+    }
+    Note_content.pop();
+    topic_arr.pop();
+    return res.render("deleted.ejs");
   }
-  topic_number-=1;
-  //replacing that partciular Note and then consecutive Notes until end of both arrays and then poping last elements
-  for(let j=topic_num_to_delete;j<topic_arr.length;j++){
-    topic_arr[j]=topic_arr[j+1];
-    Note_content[j]=Note_content[j+1];
-  }
-  Note_content.pop();
-  topic_arr.pop();
-  res.render("deleted.ejs");
+    res.render("nothingtodelete.ejs");
 });
 
 //getting input to update a existing Note
