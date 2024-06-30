@@ -12,31 +12,14 @@
     <div class="main">
         <div class="landing-page">
             <div class="heading">
-                <h1>Welcome to your <span>Notes</span> Collection!</h1>
+                <h1>Note   <span>Not</span> Found!</h1>
             </div>
             <div class="buttons-group">
                 <button onclick="location.href='/create';" class="button2">Create</button>
                 <button onclick="location.href='/view';" class="button2">View</button>
-                <button onclick="location.href='/delete';" class="button2">Delete</button>
-                <button onclick="location.href='/update';" class="button2">Update</button>
             </div>
         </div>
-
-        <h1>Total Number Of Notes: <%= topic_num %> </h1>
-
-        <h2>The list of Notes</h2>
-
-        <% if(locals.topics){ %>
-        <% for(let i=0;i<topics.length;i++){ %>
-            <ul>
-                <li>
-                    <%= topics[i] %>
-                </li>
-            </ul>
-        <% } %>
-        <% }%>
-
-        
+      
     </div>
 
 </body>

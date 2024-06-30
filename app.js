@@ -42,7 +42,7 @@ app.get("/view",(req,res)=>{
 });
 
 //viewing a Note based on the given topic
-let topic_num_to_display;
+let topic_num_to_display=0;
 app.post("/Notetoview",(req,res)=>{
   console.log(req.body.topic_name);
   for(let i=0;i<topic_arr.length;i++){
@@ -50,7 +50,7 @@ app.post("/Notetoview",(req,res)=>{
       topic_num_to_display=i;
     }
     if(i==topic_arr.length-1 && topic_arr[i]!=req.body.topic_name){
-      redirect("/view");
+      res.redirect("/notenotfound");
     }
   }
   res.render("Note.ejs",{
@@ -59,6 +59,11 @@ app.post("/Notetoview",(req,res)=>{
     topic_num:topic_num_to_display+1,
   });
 });
+
+//note not found
+app.get('/notenotfound',(req,res)=>{
+  res.render("notenotfound.ejs");
+})
 
 //getting input to view a Note
 app.get("/delete",(req,res)=>{
