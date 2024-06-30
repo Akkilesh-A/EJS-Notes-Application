@@ -133,3 +133,12 @@ textarea{
 .button-row{
   padding-top: 2%;
 }
+
+.notes-title{
+  color:#BD193F;
+  font-size: 2rem;
+}
+
+.notes-list{
+  color: #B2402A;
+}
