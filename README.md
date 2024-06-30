@@ -41,7 +41,7 @@ You need to have Node.js and npm installed on your machine. If you don't have th
     node app.js
 
 4. if you're going to develop on top of it
-    ```
+    ```sh
     nodemon app.js
 
 
